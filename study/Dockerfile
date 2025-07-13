@@ -1,8 +1,8 @@
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV TARGET=i386-elf
-ENV PREFIX=/usr/local/i386elfgcc
+ENV TARGET=i686-elf
+ENV PREFIX=/usr/local/i686elfgcc
 ENV PATH=$PREFIX/bin:$PATH
 
 
@@ -58,7 +58,7 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.
         make all-target-libgcc -j$(nproc) && \
         make install-target-libgcc
 
-RUN i386-elf-gcc --version
+RUN i686-elf-gcc --version
 
 
 # 设置工作目录
